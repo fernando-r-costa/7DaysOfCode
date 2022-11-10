@@ -1,0 +1,79 @@
+<meta charset="utf-8">
+
+<h1>#7DaysOfCode Day 3</h1>
+
+
+<script>
+		
+	function mostra(frase) {
+		alert(frase);
+	}
+
+	var nome = prompt("Qual o seu nome?");
+	
+	mostra(" Olá " + nome + ", que legal você por aqui! Responda as perguntas com as indicações entre parênteses.");
+	
+	function valida() {
+		mostra("Opção inválida, tente novamente!");
+	}
+
+	var pergunta1 = parseInt(prompt(nome + " você quer seguir para a área de Front-End (1) ou quer seguir para área de Back-End (2) ?"));
+
+		if(pergunta1 == 1) {
+			var pergunta2 = parseInt(prompt("Front-end, legal! Então você quer aprender React (1) ou quer aprender Vue (2) ?"));
+
+		} else if(pergunta1 == 2) {
+			var pergunta3 = parseInt(prompt("Back-end, top! Então você quer aprender C# (1) ou quer aprender Java (2) ?"));
+		} 
+			
+			if(pergunta2 == 1) {
+				var pergunta4 = parseInt(prompt("React, você vai seguir se especializando (1) ou vai seguir para se tornar Fullstack (2) ?"));
+			}
+
+			else if(pergunta2 == 2) {
+				var pergunta5 = parseInt(prompt("Vue, você vai seguir se especializando (1) ou vai seguir para se tornar Fullstack (2) ?"));		
+			}
+		
+
+			if(pergunta3 == 1) {
+				var pergunta6 = parseInt(prompt("C#, você vai seguir se especializando (1) ou vai seguir para se tornar Fullstack (2) ?"));
+			}
+
+			else if(pergunta3 == 2) {
+				var pergunta7 = parseInt(prompt("Java, você vai seguir se especializando (1) ou vai seguir para se tornar Fullstack (2) ?"));		
+			}
+
+				if(pergunta4 == 1 
+					|| pergunta5 == 1 
+					|| pergunta6 == 1 
+					|| pergunta7 == 1) {
+					mostra("Parabéns " + nome + ", você será um grande especialista!");
+				}
+				
+				if(pergunta4 == 2 
+					|| pergunta5 == 2 
+					|| pergunta6 == 2 
+					|| pergunta7 == 2) {
+					mostra("Parabéns " + nome + ", você será um Fullstack!");
+				}
+	
+
+	var tecnologias = [];
+	var acrescenta = 1;
+
+	while(acrescenta == 1) {
+	
+		var perguntaTecnologias = prompt("Quais são as tecnologias que você quer se especializar?");	
+		acrescenta = parseInt(prompt( "Você quer acrescentar mais uma tecnologia (1) ou não (2) ?"));;
+		tecnologias.push(perguntaTecnologias);
+		
+	}
+	
+	if(acrescenta === 1 || acrescenta === 2 ) {
+		mostra("Siga estudando " + tecnologias + " e terá um grande futuro!");
+	}
+	else {
+		valida();
+	}
+
+</script>
