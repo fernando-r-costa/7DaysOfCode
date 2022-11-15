@@ -1,0 +1,59 @@
+<meta charset="utf-8">
+
+<h1>#7DaysOfCode Day 3</h1>
+
+<h1>TENTE ADIVINHAR O NÚMERO PENSADO</h1>
+
+<h2>Chute um número entre 0 e 10</h2>
+
+<h2>Digite o seu chute! (Você tem 3 tentativas)</h2>
+<input type="text"></br></br>
+<button id="button">Tentativa 1</button>
+<button id="reset">Tentar novamente</button>
+
+<script>
+
+	function mostra(frase) {
+		alert(frase);	
+	}
+	
+	var numeroPensado = Math.round(Math.random() * 10);
+	var tentativas = 1;
+	var buttonTentativa = ["Tentativa 1", "Tentativa 2", "Tentativa 3", "FIM"];
+	var chute = document.querySelector('input');
+	var button = document.getElementById("button");
+	chute.focus();
+		
+	function verifica() {
+		while(tentativas <= 3) {
+			
+			if(chute.value == numeroPensado) {
+				button.innerHTML  = buttonTentativa[3];
+				mostra("PARABÉNS!!! Você ACERTOU!");
+				break;
+			} else {
+				chute.value = "";
+				mostra("QUE PENA!!! Você ERROU!");
+				button.innerHTML  = buttonTentativa[tentativas];
+			}
+
+			tentativas++;			
+			chute.focus();
+			if(tentativas < 4) {
+				return};
+			
+		}
+		mostra("O número pensado era " + numeroPensado);
+		mostra("FIM");
+	}
+
+	button.onclick = verifica;
+	
+	var reset = document.getElementById("reset");
+	function tentaNovamente() {		
+		window.location.reload();
+	}
+	reset.onclick = tentaNovamente;
+		
+
+</script>
