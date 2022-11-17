@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LISTA DE COMPRAS</title>
+    
+</head>
+<body>
+
+    <h1>#7DaysOfCode Day 6</h1></br>
+
+    <h1>LISTA DE COMPRAS</h1>
+    
+    <h2>Escolha a categoria</h2>
+        <select id="categoria">
+            <option>Açougue</option>
+            <option>Bebidas</option>
+            <option>Bomboniere</option>
+            <option>Congelados</option>
+            <option>Frutas e Verduras</option>
+            <option>Grãos e Farinhas</option>
+            <option>Higiene Pessoal</option>
+            <option>Laticínios</option>
+            <option>Limpeza</option>
+            <option>Pet</option>
+        </select>
+    </br></br>
+    
+    <h2> Digite o nome do item da lista</h2>
+    <input type="text" id="item"></br></br>
+    
+    <button id="adicionar">Adicionar mais um item</button></br></br>
+    <button id="remover">Remover um item</button></br></br>
+    <button id="finalizar">Finalizar lista</button></br></br></br></br>
+    
+    <script>
+    
+        function mostra(frase) {
+            document.write(frase);	
+        }
+            
+        var categoria = document.getElementById("categoria");
+        var item = document.getElementById("item");
+        var button = document.getElementById("adicionar");
+        var remover = document.getElementById("remover");
+        var finalizar = document.getElementById("finalizar");
+        item.focus();
+    
+        var acougue = [];
+        var bebidas = [];
+        var bomboniere = [];
+        var congelados = [];
+        var frutasVerduras = [];
+        var graosFarinhas = [];
+        var higienePessoal = [];
+        var laticinios = [];
+        var limpeza = [];
+        var pet = [];
+
+        var categorias = ["Açougue", "Bebidas", "Bomboniere", "Congelados", "Frutas e Verduras", 
+                        "Grãos e Farinhas", "Higiene Pessoal", "Laticínios", "Limpeza", "Pet"];
+        var arrays = [acougue, bebidas, bomboniere, congelados, frutasVerduras, 
+                        graosFarinhas, higienePessoal, laticinios, limpeza, pet];               
+        
+        function adicionarLista() {
+            var array = arrays[categorias.indexOf(categoria.value)];
+            array.push(item.value);
+            item.value = "";
+            item.focus();
+        }
+        
+        function removerLista() {
+            var array = arrays[categorias.indexOf(categoria.value)];
+            if(array.indexOf(item.value) == -1) {
+                alert("Item não encontrado!");
+            } else {
+            array.splice(array.indexOf(item.value), 1);
+            }
+            item.value = "";
+            item.focus();
+        }
+        
+        function finalizarLista() {
+            adicionarLista();
+            mostra("<h2>Essa é sua lista: </h2>" + 
+                    "</br> Açougue: "+ acougue.join(", ") +
+                    "</br> Bebidas: "+ bebidas.join(", ") +
+                    "</br> Bomboniere: "+ bomboniere.join(", ") +
+                    "</br> Congelados: "+ congelados.join(", ") +
+                    "</br> Frutas e Verduras: "+ frutasVerduras.join(", ") +
+                    "</br> Grãos e Farinhas: "+ graosFarinhas.join(", ") +
+                    "</br> Higiene Pessoal: "+ higienePessoal.join(", ") +
+                    "</br> Laticínios: "+ laticinios.join(", ") +
+                    "</br> Limpeza: "+ limpeza.join(", ") +
+                    "</br> Pet: "+ pet.join(", "))
+        }
+
+        button.onclick = adicionarLista;
+        remover.onclick = removerLista;
+        finalizar.onclick = finalizarLista;
+
+    </script>
+</body>
+</html>
