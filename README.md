@@ -7,3 +7,4 @@ Dia 3 = Jogo de perguntas usando prompt com vários caminhos e uma lista no fina
 Dia 4 = Jogo de adivinhar o número de 0-10 com 3 tentativas com número aleatório, usando input e button no html;</br>
 Dia 5 = Lista de compras com categorias, usando select e button em html, e array e document.whrite em javascript;</br>
 Dia 6 = Mesma lista de compras, agora com button para excluir item e código refatorado;</br>
+Dia 7 = Uma calculadora um pouco diferente.
